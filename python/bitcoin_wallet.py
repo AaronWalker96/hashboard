@@ -60,7 +60,6 @@ def get_curent_balance(btc_address) -> float:
     response = requests.get(
         f"https://blockchain.info/q/addressbalance/{btc_address}")
     # Convert from sats to btc (/100000000)
-    print(response)
     return int(response.json()) / 100000000
 
 

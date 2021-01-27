@@ -7,8 +7,6 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def homepage():
-    wallet = "3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC"
-
     search = forms.WalletSearchForm(request.form)
     if request.method == 'POST':
         return search_results(search)
@@ -20,16 +18,6 @@ def homepage():
 def search_results(search):
     search_string = search.data['search']
     wallet = btc.Wallet(search_string)
-
-    # if search.data['search'] == '':
-    #     qry = db_session.query(Album)
-    #     results = qry.all()
-    # if not results:
-    #     flash('No results found!')
-    #     return redirect('/')
-    # else:
-    #     # display results
-
     search = forms.WalletSearchForm(request.form)
 
     return render_template('results.html', results=search_string, wallet=wallet, form=search, title="Hashboard")
