@@ -1,13 +1,11 @@
-<html>
-    <head>
-        <title>Hashboard</title>
-    </head>
-    <body>
-        <h1>{{ title }}</h1>
-        <h2>Wallet Address: {{ wallet }}</h2>
-        <p>Balance: {{ balance }}</p>
-        <p>Sent: {{ sent }}</p>
-        <p>Received: {{ received }}</p>
-        <p>First Seen: {{ first_seen }}</p>
-    </body>
-</html>
+<doctype html="">
+  <title>Hashboard</title>
+  <h1>{{ title }}</h1>
+  {% from "_formhelpers.html" import render_field %}
+  <form method="post">
+    <dl>
+      <p>{{ render_field(form.search) }}</p>
+    </dl>
+    <p><input type="submit" value="Search" /></p>
+  </form>
+</doctype>

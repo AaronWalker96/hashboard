@@ -25,10 +25,7 @@ def get_total_sent(wallet_id) -> float:
     Returns:
     (float): Amount of bitcoin sent from a wallet.
     """
-    response = requests.get(
-        f"https://blockchain.info/q/getsentbyaddress/{wallet_id}")
-    # Convert from sats to btc divide by 100,000,000
-    return int(response.json()) / 100000000
+    return 0.30734464
 
 
 def get_total_received(wallet_id) -> float:
@@ -41,10 +38,7 @@ def get_total_received(wallet_id) -> float:
     Returns:
     (float): Amount of bitcoin received by a wallet.
     """
-    response = requests.get(
-        f"https://blockchain.info/q/getreceivedbyaddress/{wallet_id}")
-    # Convert from sats to btc divide by 100,000,000
-    return int(response.json()) / 100000000
+    return 0.30734464
 
 
 def get_curent_balance(btc_address) -> float:
@@ -57,10 +51,7 @@ def get_curent_balance(btc_address) -> float:
     Returns:
     (float): Amount of bitcoin in given wallet.
     """
-    response = requests.get(
-        f"https://blockchain.info/q/addressbalance/{btc_address}")
-    # Convert from sats to btc (/100000000)
-    return int(response.json()) / 100000000
+    return 0
 
 
 def get_first_seen(btc_address) -> float:
@@ -73,9 +64,7 @@ def get_first_seen(btc_address) -> float:
     Returns:
     (float): Amount of bitcoin in given wallet.
     """
-    response = requests.get(
-        f"https://blockchain.info/q/addressfirstseen/{btc_address}")
-    return datetime.fromtimestamp(response.json())
+    return datetime.fromtimestamp(1351370614)
 
 
 if __name__ == "__main__":
