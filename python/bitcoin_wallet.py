@@ -12,7 +12,6 @@ class Wallet:
         self.total_sent = get_total_sent(address)
         self.total_received = get_total_received(address)
         self.first_seen = get_first_seen(address)
-        
 
 
 def get_total_sent(wallet_id) -> float:
@@ -63,7 +62,7 @@ def get_curent_balance(btc_address) -> float:
     return int(response.json()) / 100000000
 
 
-def get_first_seen(btc_address) -> float:
+def get_first_seen(btc_address) -> datetime:
     """
     Returns the timestamp of the block an address was first confirmed in.
 
@@ -71,15 +70,8 @@ def get_first_seen(btc_address) -> float:
     btc_address (str): The bitcoin wallet.
 
     Returns:
-    (float): Amount of bitcoin in given wallet.
+    (datetime): The date the block an address was first confirmed in.
     """
     response = requests.get(
         f"https://blockchain.info/q/addressfirstseen/{btc_address}")
     return datetime.fromtimestamp(response.json())
-
-
-if __name__ == "__main__":
-    print(get_total_sent("3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC"))
-    print(get_total_received("3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC"))
-    print(get_curent_balance("3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC"))
-    print(get_first_seen("3QJmV3qfvL9SuYo34YihAf3sRCW3qSinyC"))
