@@ -1,20 +1,27 @@
 <html>
   <head>
     <title>Hashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
   </head>
   <body>
-    <h2>Wallet Address: {{ wallet.adress }}</h2>
-    <p>Balance: {{ wallet.balance }}</p>
-    <p>Sent: {{ wallet.total_sent }}</p>
-    <p>Received: {{ wallet.total_received }}</p>
-    <p>First Seen: {{ wallet.first_seen }}</p>
-    <p>Search Again?</p>
-    {% from "_formhelpers.html" import render_field %}
-    <form method="post">
-      <dl>
-        <p>{{ render_field(form.search) }}</p>
-      </dl>
-      <p><input type="submit" value="Search" /></p>
-    </form>
+    <h1>{{ title }}</h1>
+    <div class="box">
+      <h2>Wallet Address: {{ wallet.address }}</h2>
+      <p>Balance: {{ wallet.get_curent_balance() }}</p>
+      <p>Sent: {{ wallet.get_total_sent() }}</p>
+      <p>Received: {{ wallet.get_total_received() }}</p>
+      <p>First Seen: {{ wallet.get_first_seen() }}</p>
+      <p>Search Again?</p>
+      {% from "_formhelpers.html" import render_field %}
+      <form method="post">
+        <dl>
+          <p>{{ render_field(form.search) }}</p>
+        </dl>
+        <p><input type="submit" value="Search" /></p>
+      </form>
+    </div>
   </body>
 </html>
