@@ -9,11 +9,7 @@
   <body>
     <h1>{{ title }}</h1>
     <div class="box">
-      <h2>Wallet Address: {{ wallet.address }}</h2>
-      <p>Balance: {{ wallet.get_curent_balance() }}</p>
-      <p>Sent: {{ wallet.get_total_sent() }}</p>
-      <p>Received: {{ wallet.get_total_received() }}</p>
-      <p>First Seen: {{ wallet.get_first_seen() }}</p>
+      <p>That doens't seem to be a valid address</p>
       <p>Search Again?</p>
       {% from "_formhelpers.html" import render_field %}
       <form method="post">

@@ -1,0 +1,13 @@
+body {
+    background-color: #211D42;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 15px;
+    padding: 0;
+}
+
+.box {
+    padding: 5px 30px;
+    background-color: #373356;
+    border-radius: 15px;
+}
