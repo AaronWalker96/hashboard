@@ -1,23 +1,12 @@
-<html>
-  <head>
-    <title>Hashboard</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles.css') }}"
-    />
-  </head>
-  <body>
-    <h1>{{ title }}</h1>
-    <div class="box">
-      <p>That doens't seem to be a valid address</p>
-      <p>Search Again?</p>
-      {% from "_formhelpers.html" import render_field %}
-      <form method="post">
-        <dl>
-          <p>{{ render_field(form.search) }}</p>
-        </dl>
-        <p><input type="submit" value="Search" /></p>
-      </form>
-    </div>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<p>That doens't seem to be a valid address</p>
+<p>Search Again?</p>
+{% from "_formhelpers.html" import render_field %}
+<form method="post">
+  <dl>
+    <p>{{ render_field(form.search) }}</p>
+  </dl>
+  <p><input type="submit" value="Search" class="searchbutton" /></p>
+</form>
+{% endblock %}
