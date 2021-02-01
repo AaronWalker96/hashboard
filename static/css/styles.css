@@ -1,13 +1,82 @@
+html {
+  height: 100%;
+}
+
 body {
-    background-color: #211D42;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    margin: 15px;
-    padding: 0;
+  background-color: #211d42;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin: 15px;
+  padding: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 0px 5px;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+  padding-right: 50px;
+  cursor: pointer;
+}
+
+.push {
+  margin-left: auto;
+}
+
+.page {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  padding: 30px 30px 15px 30px;
+  background-color: #373356;
+  border-radius: 15px;
+  width: min-content;
+  margin-right: 15px;
+  overflow: auto;
+}
+
+.pageicon {
+  height: 30px;
+  width: 30px;
+  padding-bottom: 15px;
+  cursor: pointer;
 }
 
 .box {
-    padding: 5px 30px;
-    background-color: #373356;
-    border-radius: 15px;
+  padding: 5px 30px;
+  background-color: #373356;
+  border-radius: 15px;
+  width: 100%;
+  overflow: auto;
+}
+
+dd {
+  display: block;
+  margin-inline-start: 0px;
+}
+
+input[type="text"] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.searchbutton {
+  background-color: #8742fb;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
 }
