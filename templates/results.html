@@ -1,10 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Wallet Address: {{ wallet.address }}</h2>
-<p>Current Balance: {{ wallet.get_curent_balance() }}</p>
-<p>Total Sent: {{ wallet.get_total_sent() }}</p>
-<p>Total Received: {{ wallet.get_total_received() }}</p>
-<p>Address First Seen: {{ wallet.get_first_seen() }}</p>
+<div class="cardcontainer">
+  <div class="statcard">
+    <p>Current Balance:</p>
+    <p class="statvalue">{{ wallet.get_curent_balance() }} BTC</p>
+  </div>
+  <div class="statcard">
+    <p>Total Sent:</p>
+    <p class="statvalue">{{ wallet.get_total_sent() }} BTC</p>
+  </div>
+  <div class="statcard">
+    <p>Total Received:</p>
+    <p class="statvalue">{{ wallet.get_total_received() }} BTC</p>
+  </div>
+  <div class="statcard">
+    <p>First Seen:</p>
+    <p class="statvalue">{{ wallet.get_first_seen() }}</p>
+  </div>
+</div>
 {% from "_formhelpers.html" import render_field %}
 <form method="post">
   <dl>

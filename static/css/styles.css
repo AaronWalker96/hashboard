@@ -80,3 +80,21 @@ input[type="text"] {
   font-size: 16px;
   border-radius: 5px;
 }
+
+.cardcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statcard {
+  background-color: #BDC1D0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 20%;
+  text-align: center;
+  color: black;
+}
+
+.statvalue {
+  font-size: 20px;
+}

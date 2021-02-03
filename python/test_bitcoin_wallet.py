@@ -68,3 +68,13 @@ def test_wallet_exists_false():
     exists = wallet.get_exists()
 
     assert exists == False
+
+
+def test_get_transaction_count_returns_int():
+    """
+    Tests that the correct number of transactions is returned.
+    """
+    wallet = bitcoin_wallet.Wallet(TEST_WALLET_ID)
+    transaction_count = wallet.get_transaction_count()
+
+    assert type(transaction_count) == int

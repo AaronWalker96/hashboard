@@ -78,7 +78,7 @@ class Wallet:
         Returns the timestamp of the block an address was first confirmed in.
 
         Parameters:
-        btc_address (str): The bitcoin wallet.
+        address (str): The bitcoin wallet.
 
         Returns:
         (datetime): The date the block an address was first confirmed in.
@@ -86,3 +86,17 @@ class Wallet:
         response = requests.get(
             f"https://blockchain.info/q/addressfirstseen/{self.address}")
         return datetime.fromtimestamp(response.json())
+
+    def get_transaction_count(self) -> int:
+        """
+        Returns the number of transactions associated with a wallet.
+
+        Parameters:
+        address (str): The bitcoin wallet.
+
+        Returns:
+        (int): The number of transactions.
+        """
+        response = requests.get(
+            f"https://blockchain.info/rawaddr/{self.address}")
+        return response.json()["n_tx"]
