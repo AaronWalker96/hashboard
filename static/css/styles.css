@@ -83,12 +83,14 @@ input[type="text"] {
 
 .cardcontainer {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-around; */
+  padding-bottom: 20px;
 }
 
 .statcard {
   background-color: #BDC1D0;
   padding: 20px;
+  margin-right: 20px;
   border-radius: 10px;
   width: 20%;
   text-align: center;

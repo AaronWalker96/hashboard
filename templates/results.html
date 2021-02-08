@@ -1,10 +1,13 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <h2>Wallet Address: {{ wallet.address }}</h2>
 <div class="cardcontainer">
   <div class="statcard">
     <p>Current Balance:</p>
-    <p class="statvalue">{{ wallet.get_curent_balance() }} BTC</p>
+    <p class="statvalue">{{ wallet.get_current_balance() }} BTC</p>
+  </div>
+  <div class="statcard">
+    <p>Current Value:</p>
+    <p class="statvalue">{{ wallet.get_current_balance_fiat("GBP") }} GBP</p>
   </div>
   <div class="statcard">
     <p>Total Sent:</p>
@@ -13,6 +16,12 @@
   <div class="statcard">
     <p>Total Received:</p>
     <p class="statvalue">{{ wallet.get_total_received() }} BTC</p>
+  </div>
+</div>
+<div class="cardcontainer">
+  <div class="statcard">
+    <p>Number of Transactions:</p>
+    <p class="statvalue">{{ wallet.get_transaction_count() }}</p>
   </div>
   <div class="statcard">
     <p>First Seen:</p>
