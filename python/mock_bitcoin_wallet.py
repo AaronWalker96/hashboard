@@ -48,7 +48,7 @@ class Wallet:
         """
         return 0.30734464
 
-    def get_curent_balance(self) -> float:
+    def get_current_balance(self) -> float:
         """
         Returns the amount of bitcoin currently in a given wallet.
 
@@ -57,6 +57,19 @@ class Wallet:
 
         Returns:
         (float): Amount of bitcoin in given wallet.
+        """
+        return 0
+
+    def get_current_balance_fiat(self, currency) -> float:
+        """
+        Returns the fiat value of the amount of bitcoin currently in a given wallet.
+
+        Parameters:
+        btc_address (str): The bitcoin wallet to get amount from.
+        currency (str): The currency to provide value in.
+
+        Returns:
+        (float): Fiat amount of bitcoin in given wallet.
         """
         return 0
 
@@ -71,3 +84,15 @@ class Wallet:
         (float): Amount of bitcoin in given wallet.
         """
         return datetime.fromtimestamp(1351370614)
+
+    def get_transaction_count(self) -> int:
+        """
+        Returns the number of transactions associated with a wallet.
+
+        Parameters:
+        address (str): The bitcoin wallet.
+
+        Returns:
+        (int): The number of transactions.
+        """
+        return 147

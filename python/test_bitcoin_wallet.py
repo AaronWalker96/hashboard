@@ -34,7 +34,7 @@ def test_get_current_balance_returns_float():
     """
     # Create a wallet and get total sent
     wallet = bitcoin_wallet.Wallet(TEST_WALLET_ID)
-    current_balance = wallet.get_curent_balance()
+    current_balance = wallet.get_current_balance()
 
     assert type(current_balance) == float
 
@@ -78,3 +78,13 @@ def test_get_transaction_count_returns_int():
     transaction_count = wallet.get_transaction_count()
 
     assert type(transaction_count) == int
+
+
+def test_get_current_balance_fiat_returns_float():
+    """
+    Tests that a currency is returned in float form.
+    """
+    wallet = bitcoin_wallet.Wallet(TEST_WALLET_ID)
+    transaction_count = wallet.get_current_balance_fiat("GBP")
+
+    assert type(transaction_count) == float

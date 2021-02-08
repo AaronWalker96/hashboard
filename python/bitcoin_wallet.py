@@ -57,7 +57,7 @@ class Wallet:
         # Convert from sats to btc divide by 100,000,000
         return int(response.json()) / 100000000
 
-    def get_curent_balance(self) -> float:
+    def get_current_balance(self) -> float:
         """
         Returns the amount of bitcoin currently in a given wallet.
 
@@ -70,8 +70,23 @@ class Wallet:
         response = requests.get(
             f"https://blockchain.info/q/addressbalance/{self.address}")
         # Convert from sats to btc (/100000000)
-        print(response.json())
         return int(response.json()) / 100000000
+
+    def get_current_balance_fiat(self, currency) -> float:
+        """
+        Returns the fiat value of the amount of bitcoin currently in a given wallet.
+
+        Parameters:
+        btc_address (str): The bitcoin wallet to get amount from.
+        currency (str): The currency to provide value in.
+
+        Returns:
+        (float): Fiat amount of bitcoin in given wallet.
+        """
+        response = requests.get(
+            f"https://api.coindesk.com/v1/bpi/currentprice.json")
+        current_val = float(response.json()["bpi"][currency.upper()]['rate'].replace(',', ''))
+        return round(current_val * self.get_current_balance(), 2)
 
     def get_first_seen(self) -> datetime:
         """
