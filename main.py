@@ -20,7 +20,6 @@ def homepage():
 @app.route('/results', methods=['GET', 'POST'])
 def search_results(search):
     global currency
-    print(f"Current currency is { currency }")
     search_string = search.data['search']
     wallet = btc.Wallet(search_string)
     search = forms.WalletSearchForm(request.form)
