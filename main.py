@@ -4,6 +4,9 @@ from forms import forms
 
 app = Flask(__name__)
 
+global currency
+currency = "GBP"
+
 
 @app.route("/", methods=['GET', 'POST'])
 def homepage():
@@ -16,18 +19,26 @@ def homepage():
 
 @app.route('/results', methods=['GET', 'POST'])
 def search_results(search):
+    global currency
     search_string = search.data['search']
     wallet = btc.Wallet(search_string)
     search = forms.WalletSearchForm(request.form)
     if wallet.get_exists():
-        return render_template('results.html', results=search_string, wallet=wallet, form=search, title="Hashboard Search")
+        return render_template('results.html', results=search_string, wallet=wallet, form=search, currency=currency, wallet_value=wallet.get_current_balance_fiat(currency), title="Hashboard Search")
     else:
         return render_template('results_not_found.html', form=search, title="Hashboard Search")
-    
 
-@app.route('/settings')
+
+@app.route('/settings', methods=['GET', 'POST'])
 def settings_page():
-    return render_template("settings.html", title="Settings")
+    message = ""
+    if request.method == 'POST':
+        global currency
+        currency = request.form['currency']
+        search = forms.WalletSearchForm(request.form)
+        message = "Settings Updated."
+
+    return render_template("settings.html", title="Settings", currency=currency, message=message)
 
 
 if __name__ == "__main__":
