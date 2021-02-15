@@ -1,5 +1,10 @@
 {% extends "base.html" %} {% block content %}
-<h2>Wallet Address: {{ wallet.address }}</h2>
+<h2>Wallet Statistics For: {{ wallet.address }}</h2>
+{% from "_formhelpers.html" import render_field %}
+<form method="post">
+  <p>{{ render_field(form.search) }}</p>
+  <p><input type="submit" value="Search" class="searchbutton" /></p>
+</form>
 <div class="cardcontainer">
   <div class="statcard">
     <p>Current Balance:</p>
@@ -28,11 +33,4 @@
     <p class="statvalue">{{ wallet.get_first_seen() }}</p>
   </div>
 </div>
-{% from "_formhelpers.html" import render_field %}
-<form method="post">
-  <dl>
-    <p>{{ render_field(form.search) }}</p>
-  </dl>
-  <p><input type="submit" value="Search" class="searchbutton" /></p>
-</form>
 {% endblock %}

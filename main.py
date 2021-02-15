@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from python import bitcoin_wallet as btc
+from python import mock_bitcoin_wallet as btc
 from forms import forms
 
 app = Flask(__name__)

@@ -59,14 +59,17 @@ body {
 dd {
   display: block;
   margin-inline-start: 0px;
+  margin: auto;
+  width: 100%;
 }
 
 input[type="text"] {
-  width: 50%;
-  padding: 12px 20px;
+  width: 100%;
+  padding: 16px 20px;
   margin: 8px 0;
   box-sizing: border-box;
   border-radius: 5px;
+  padding-right: 15px;
 }
 
 .searchbutton {
@@ -79,16 +82,22 @@ input[type="text"] {
   display: inline-block;
   font-size: 16px;
   border-radius: 5px;
+  margin-left: 10px;
 }
 
 .cardcontainer {
   display: flex;
   /* justify-content: space-around; */
-  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+form {
+  display: flex;
+  width: 65%;
 }
 
 .statcard {
-  background-color: #BDC1D0;
+  background-color: #bdc1d0;
   padding: 20px;
   margin-right: 20px;
   border-radius: 10px;
@@ -99,4 +108,42 @@ input[type="text"] {
 
 .statvalue {
   font-size: 20px;
+}
+
+.footer {
+  background: #373356;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  opacity: 0.5;
+  vertical-align: mi;
+}
+
+.footer-content {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+a.nav-link:link
+{
+   color: white;
+   text-decoration: none;
+}
+a.nav-link:visited
+{
+   color: white;
+   text-decoration: none;
+}
+a.nav-link:hover
+{
+   color: white;
+   text-decoration: none;
+}
+a.nav-link:active
+{
+   color: white;
+   text-decoration: none;
 }
