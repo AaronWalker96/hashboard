@@ -1,12 +1,9 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <p>That doesn't seem to be a valid address.</p>
 <p>Search Again?</p>
 {% from "_formhelpers.html" import render_field %}
 <form method="post">
-  <dl>
-    <p>{{ render_field(form.search) }}</p>
-  </dl>
+  <p>{{ render_field(form.search) }}</p>
   <p><input type="submit" value="Search" class="searchbutton" /></p>
 </form>
 {% endblock %}

@@ -96,6 +96,15 @@ form {
   width: 65%;
 }
 
+.padder {
+  padding: 10px;
+}
+
+.radiobox {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .statcard {
   background-color: #bdc1d0;
   padding: 20px;
