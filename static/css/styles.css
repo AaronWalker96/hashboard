@@ -87,7 +87,6 @@ input[type="text"] {
 
 .cardcontainer {
   display: flex;
-  /* justify-content: space-around; */
   padding-bottom: 20px;
 }
 

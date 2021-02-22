@@ -22,7 +22,7 @@ class Wallet:
         response = requests.get(
             f"https://blockchain.info/q/addressfirstseen/{self.address}")
         try:
-            first_seen = datetime.fromtimestamp(response.json())
+            datetime.fromtimestamp(response.json())
             return True
         except:
             return False
