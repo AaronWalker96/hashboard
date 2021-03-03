@@ -1,5 +1,27 @@
 # Hashboard
 
-![Hashboard Logo](static/img/hashboard_logo_w.png)
+> A Bitcoin wallet analysis dashboard
 
-> "Everything you need to know about your crypto, all in one place"
+## Getting Started
+
+Create a virtual environment and activate it. Install the required dependancies using:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Running the Application
+
+Run the Flask app using:
+
+```bash
+python main.py
+```
+
+## Unit Tests
+
+The unit testing library used for this project is pytest. In order to run the unit test, simply run the command:
+
+```bash
+pytest
+```
